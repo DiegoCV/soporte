@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Mantenimiento" table="mantenimiento">
+    <id name="idmantenimiento" type="integer" column="idMantenimiento">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-many field="equipoequipo" target-entity="Equipo" inversed-by="mantenimientomantenimiento" fetch="LAZY">
+      <join-table name="mantenimiento_has_equipo">
+        <join-columns>
+          <join-column name="Mantenimiento_idMantenimiento" referenced-column-name="idMantenimiento"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="Equipo_idEquipo" referenced-column-name="idEquipo"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

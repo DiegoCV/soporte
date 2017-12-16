@@ -1,0 +1,36 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Problema
+ *
+ * @ORM\Table(name="problema", indexes={@ORM\Index(name="fk_Problema_Equipo1_idx", columns={"Equipo_idEquipo"})})
+ * @ORM\Entity
+ */
+class Problema
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idProblema", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idproblema;
+
+    /**
+     * @var \Equipo
+     *
+     * @ORM\ManyToOne(targetEntity="Equipo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Equipo_idEquipo", referencedColumnName="idEquipo")
+     * })
+     */
+    private $equipoequipo;
+
+
+}
+

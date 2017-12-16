@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Equipo" table="equipo">
+    <indexes>
+      <index name="fk_Equipo_Usuario_idx" columns="Usuario_idUsuario"/>
+    </indexes>
+    <id name="idequipo" type="integer" column="idEquipo">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <many-to-one field="usuariousuario" target-entity="Usuario" fetch="LAZY">
+      <join-columns>
+        <join-column name="Usuario_idUsuario" referenced-column-name="idUsuario"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="mantenimientomantenimiento" target-entity="Mantenimiento" mapped-by="equipoequipo" fetch="LAZY"/>
+  </entity>
+</doctrine-mapping>

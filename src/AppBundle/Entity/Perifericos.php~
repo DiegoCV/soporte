@@ -1,0 +1,53 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Perifericos
+ *
+ * @ORM\Table(name="perifericos", indexes={@ORM\Index(name="fk_Periféricos_Equipo1_idx", columns={"Equipo_idEquipo"}), @ORM\Index(name="fk_Periféricos_Departamento1_idx", columns={"Departamento_idDepartamento"})})
+ * @ORM\Entity
+ */
+class Perifericos
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPerifericos", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idperifericos;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isImpresora", type="boolean", nullable=true)
+     */
+    private $isimpresora;
+
+    /**
+     * @var \Departamento
+     *
+     * @ORM\ManyToOne(targetEntity="Departamento")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Departamento_idDepartamento", referencedColumnName="idDepartamento")
+     * })
+     */
+    private $departamentodepartamento;
+
+    /**
+     * @var \Equipo
+     *
+     * @ORM\ManyToOne(targetEntity="Equipo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Equipo_idEquipo", referencedColumnName="idEquipo")
+     * })
+     */
+    private $equipoequipo;
+
+
+}
+

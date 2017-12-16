@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipo
+ *
+ * @ORM\Table(name="equipo", indexes={@ORM\Index(name="fk_Equipo_Usuario_idx", columns={"Usuario_idUsuario"})})
+ * @ORM\Entity
+ */
+class Equipo
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idEquipo", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idequipo;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Usuario_idUsuario", referencedColumnName="idUsuario")
+     * })
+     */
+    private $usuariousuario;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Mantenimiento", mappedBy="equipoequipo")
+     */
+    private $mantenimientomantenimiento;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->mantenimientomantenimiento = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+
