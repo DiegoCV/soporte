@@ -21,6 +21,13 @@ class Usuario
      */
     private $idusuario;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
+     */
+    private $nombre;
+
 
 
     /**
@@ -31,5 +38,29 @@ class Usuario
     public function getIdusuario()
     {
         return $this->idusuario;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Usuario
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
     }
 }

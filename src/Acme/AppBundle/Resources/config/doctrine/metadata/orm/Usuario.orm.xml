@@ -4,5 +4,10 @@
     <id name="idusuario" type="integer" column="idUsuario">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="nombre" type="string" column="nombre" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
   </entity>
 </doctrine-mapping>

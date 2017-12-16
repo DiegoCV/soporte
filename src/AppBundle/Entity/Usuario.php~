@@ -21,6 +21,13 @@ class Usuario
      */
     private $idusuario;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
+     */
+    private $nombre;
+
 
 }
 

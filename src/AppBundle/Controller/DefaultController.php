@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
+//php bin/console generate:controller
+
     /**
      * @Route("/", name="homepage")
      */
