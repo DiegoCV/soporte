@@ -39,7 +39,15 @@ class Usuario
     {
         return $this->idusuario;
     }
-
+    /**
+     * Un puto método que deja meter el cochino id porque el dichoso framework no lo hace sólo ( -.-)
+     *
+     * @return void
+     */
+    public function setIdusuario($id)
+    {
+        $this->idusuario=$id;
+    }
     /**
      * Set nombre
      *
