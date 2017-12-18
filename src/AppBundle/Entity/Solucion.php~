@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Solucion
  *
- * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Periféricos1_idx", columns={"Perifericos_idPerifericos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
+ * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Periféricos1_idx", columns={"Periféricos_idPeriféricos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
  * @ORM\Entity
  */
 class Solucion
@@ -22,14 +22,28 @@ class Solucion
     private $idsolucion;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_Solucion", type="datetime", nullable=true)
+     */
+    private $fechaSolucion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Solucion", type="string", length=500, nullable=true)
+     */
+    private $solucion;
+
+    /**
      * @var \Perifericos
      *
      * @ORM\ManyToOne(targetEntity="Perifericos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Perifericos_idPerifericos", referencedColumnName="idPerifericos")
+     *   @ORM\JoinColumn(name="Periféricos_idPeriféricos", referencedColumnName="id")
      * })
      */
-    private $perifericosperifericos;
+    private $perif�ricosperif�ricos;
 
     /**
      * @var \Problema

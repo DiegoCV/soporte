@@ -22,6 +22,41 @@ class Torre
     private $idtorre;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="marca", type="string", length=45, nullable=true)
+     */
+    private $marca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modelo", type="string", length=45, nullable=true)
+     */
+    private $modelo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="serial", type="string", length=45, nullable=true)
+     */
+    private $serial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stiker_activo", type="string", length=45, nullable=true)
+     */
+    private $stikerActivo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_compra", type="date", nullable=true)
+     */
+    private $fechaCompra;
+
+    /**
      * @var \Equipo
      *
      * @ORM\ManyToOne(targetEntity="Equipo")

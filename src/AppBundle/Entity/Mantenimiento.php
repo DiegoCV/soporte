@@ -22,6 +22,20 @@ class Mantenimiento
     private $idmantenimiento;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="feha_mantenimiento", type="date", nullable=false)
+     */
+    private $fehaMantenimiento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observaciones", type="string", length=400, nullable=false)
+     */
+    private $observaciones;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="Equipo", inversedBy="mantenimientomantenimiento")
@@ -53,6 +67,54 @@ class Mantenimiento
     public function getIdmantenimiento()
     {
         return $this->idmantenimiento;
+    }
+
+    /**
+     * Set fehaMantenimiento
+     *
+     * @param \DateTime $fehaMantenimiento
+     *
+     * @return Mantenimiento
+     */
+    public function setFehaMantenimiento($fehaMantenimiento)
+    {
+        $this->fehaMantenimiento = $fehaMantenimiento;
+
+        return $this;
+    }
+
+    /**
+     * Get fehaMantenimiento
+     *
+     * @return \DateTime
+     */
+    public function getFehaMantenimiento()
+    {
+        return $this->fehaMantenimiento;
+    }
+
+    /**
+     * Set observaciones
+     *
+     * @param string $observaciones
+     *
+     * @return Mantenimiento
+     */
+    public function setObservaciones($observaciones)
+    {
+        $this->observaciones = $observaciones;
+
+        return $this;
+    }
+
+    /**
+     * Get observaciones
+     *
+     * @return string
+     */
+    public function getObservaciones()
+    {
+        return $this->observaciones;
     }
 
     /**

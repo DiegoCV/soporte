@@ -22,6 +22,20 @@ class Problema
     private $idproblema;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="problema", type="string", length=500, nullable=true)
+     */
+    private $problema;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
+     */
+    private $fechaRegistro;
+
+    /**
      * @var \Equipo
      *
      * @ORM\ManyToOne(targetEntity="Equipo")
@@ -41,6 +55,54 @@ class Problema
     public function getIdproblema()
     {
         return $this->idproblema;
+    }
+
+    /**
+     * Set problema
+     *
+     * @param string $problema
+     *
+     * @return Problema
+     */
+    public function setProblema($problema)
+    {
+        $this->problema = $problema;
+
+        return $this;
+    }
+
+    /**
+     * Get problema
+     *
+     * @return string
+     */
+    public function getProblema()
+    {
+        return $this->problema;
+    }
+
+    /**
+     * Set fechaRegistro
+     *
+     * @param \DateTime $fechaRegistro
+     *
+     * @return Problema
+     */
+    public function setFechaRegistro($fechaRegistro)
+    {
+        $this->fechaRegistro = $fechaRegistro;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaRegistro
+     *
+     * @return \DateTime
+     */
+    public function getFechaRegistro()
+    {
+        return $this->fechaRegistro;
     }
 
     /**

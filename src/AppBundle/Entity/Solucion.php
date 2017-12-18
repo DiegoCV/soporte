@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Solucion
  *
- * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Periféricos1_idx", columns={"Perifericos_idPerifericos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
+ * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Periféricos1_idx", columns={"Periféricos_idPeriféricos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
  * @ORM\Entity
  */
 class Solucion
@@ -22,11 +22,25 @@ class Solucion
     private $idsolucion;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_Solucion", type="datetime", nullable=true)
+     */
+    private $fechaSolucion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Solucion", type="string", length=500, nullable=true)
+     */
+    private $solucion;
+
+    /**
      * @var \Perifericos
      *
      * @ORM\ManyToOne(targetEntity="Perifericos")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Perifericos_idPerifericos", referencedColumnName="idPerifericos")
+     *   @ORM\JoinColumn(name="Perifericos_idPerifericos", referencedColumnName="id")
      * })
      */
     private $perifericosperifericos;
@@ -74,7 +88,55 @@ class Solucion
     }
 
     /**
-     * Set perifericosperifericos
+     * Set fechaSolucion
+     *
+     * @param \DateTime $fechaSolucion
+     *
+     * @return Solucion
+     */
+    public function setFechaSolucion($fechaSolucion)
+    {
+        $this->fechaSolucion = $fechaSolucion;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaSolucion
+     *
+     * @return \DateTime
+     */
+    public function getFechaSolucion()
+    {
+        return $this->fechaSolucion;
+    }
+
+    /**
+     * Set solucion
+     *
+     * @param string $solucion
+     *
+     * @return Solucion
+     */
+    public function setSolucion($solucion)
+    {
+        $this->solucion = $solucion;
+
+        return $this;
+    }
+
+    /**
+     * Get solucion
+     *
+     * @return string
+     */
+    public function getSolucion()
+    {
+        return $this->solucion;
+    }
+
+    /**
+     * Set perif�ricosperif�ricos
      *
      * @param \AppBundle\Entity\Perifericos $perifericosperifericos
      *
@@ -88,7 +150,7 @@ class Solucion
     }
 
     /**
-     * Get perifericosperifericos
+     * Get perif�ricosperif�ricos
      *
      * @return \AppBundle\Entity\Perifericos
      */

@@ -7,6 +7,12 @@
     <id name="idproblema" type="integer" column="idProblema">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="problema" type="string" column="problema" length="500" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fechaRegistro" type="datetime" column="fecha_registro" nullable="true"/>
     <many-to-one field="equipoequipo" target-entity="Equipo" fetch="LAZY">
       <join-columns>
         <join-column name="Equipo_idEquipo" referenced-column-name="idEquipo"/>

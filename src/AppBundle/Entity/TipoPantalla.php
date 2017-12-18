@@ -5,21 +5,21 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Departamento
+ * TipoPantalla
  *
- * @ORM\Table(name="departamento")
+ * @ORM\Table(name="tipo_pantalla")
  * @ORM\Entity
  */
-class Departamento
+class TipoPantalla
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="idDepartamento", type="integer", nullable=false)
+     * @ORM\Column(name="idTipo_Pantalla", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $iddepartamento;
+    private $idtipoPantalla;
 
     /**
      * @var string
@@ -31,13 +31,13 @@ class Departamento
 
 
     /**
-     * Get iddepartamento
+     * Get idtipoPantalla
      *
      * @return integer
      */
-    public function getIddepartamento()
+    public function getIdtipoPantalla()
     {
-        return $this->iddepartamento;
+        return $this->idtipoPantalla;
     }
 
     /**
@@ -45,7 +45,7 @@ class Departamento
      *
      * @param string $nombre
      *
-     * @return Departamento
+     * @return TipoPantalla
      */
     public function setNombre($nombre)
     {

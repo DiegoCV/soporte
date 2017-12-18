@@ -22,6 +22,20 @@ class Problema
     private $idproblema;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="problema", type="string", length=500, nullable=true)
+     */
+    private $problema;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
+     */
+    private $fechaRegistro;
+
+    /**
      * @var \Equipo
      *
      * @ORM\ManyToOne(targetEntity="Equipo")

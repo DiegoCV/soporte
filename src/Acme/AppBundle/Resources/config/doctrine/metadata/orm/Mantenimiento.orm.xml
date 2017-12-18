@@ -4,6 +4,12 @@
     <id name="idmantenimiento" type="integer" column="idMantenimiento">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="fehaMantenimiento" type="date" column="feha_mantenimiento" nullable="false"/>
+    <field name="observaciones" type="string" column="observaciones" length="400" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
     <many-to-many field="equipoequipo" target-entity="Equipo" inversed-by="mantenimientomantenimiento" fetch="LAZY">
       <join-table name="mantenimiento_has_equipo">
         <join-columns>

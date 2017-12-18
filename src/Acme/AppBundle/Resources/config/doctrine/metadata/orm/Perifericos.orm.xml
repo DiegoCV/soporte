@@ -4,11 +4,43 @@
     <indexes>
       <index name="fk_Periféricos_Equipo1_idx" columns="Equipo_idEquipo"/>
       <index name="fk_Periféricos_Departamento1_idx" columns="Departamento_idDepartamento"/>
+      <index name="fk_Periféricos_Tipo_Periferico1_idx" columns="Tipo_Periferico_id"/>
+      <index name="fk_Periféricos_Tipo_Pantalla1_idx" columns="Tipo_Pantalla_idTipo_Pantalla"/>
     </indexes>
-    <id name="idperifericos" type="integer" column="idPerifericos">
+    <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
     <field name="isimpresora" type="boolean" column="isImpresora" nullable="true"/>
+    <field name="marca" type="string" column="marca" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="modelo" type="string" column="modelo" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="serial" type="string" column="serial" length="45" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="pulgadas" type="string" column="pulgadas" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="stikerActivo" type="string" column="stiker_activo" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fechaCompra" type="string" column="fecha_compra" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
     <many-to-one field="departamentodepartamento" target-entity="Departamento" fetch="LAZY">
       <join-columns>
         <join-column name="Departamento_idDepartamento" referenced-column-name="idDepartamento"/>
@@ -17,6 +49,16 @@
     <many-to-one field="equipoequipo" target-entity="Equipo" fetch="LAZY">
       <join-columns>
         <join-column name="Equipo_idEquipo" referenced-column-name="idEquipo"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="tipoPantallatipoPantalla" target-entity="TipoPantalla" fetch="LAZY">
+      <join-columns>
+        <join-column name="Tipo_Pantalla_idTipo_Pantalla" referenced-column-name="idTipo_Pantalla"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="tipoPeriferico" target-entity="TipoPeriferico" fetch="LAZY">
+      <join-columns>
+        <join-column name="Tipo_Periferico_id" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

@@ -54,7 +54,7 @@ class Equipo
      */
     public function getIdequipo()
     {
-        return (string)$this->idequipo;
+        return $this->idequipo;
     }
 
     /**
@@ -78,7 +78,7 @@ class Equipo
      */
     public function getUsuariousuario()
     {
-        return (string)$this->usuariousuario;
+        return $this->usuariousuario;
     }
 
     /**

@@ -22,6 +22,34 @@ class Software
     private $idsoftware;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="Tipo_Software_idTipo_Software", type="integer", nullable=false)
+     */
+    private $tipoSoftwareIdtipoSoftware;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_vencimiento", type="string", length=45, nullable=true)
+     */
+    private $fechaVencimiento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=45, nullable=true)
+     */
+    private $version;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=45, nullable=true)
+     */
+    private $nombre;
+
+    /**
      * @var \Equipo
      *
      * @ORM\ManyToOne(targetEntity="Equipo")

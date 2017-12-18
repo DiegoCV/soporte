@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Perifericos
  *
- * @ORM\Table(name="perifericos", indexes={@ORM\Index(name="fk_Periféricos_Equipo1_idx", columns={"Equipo_idEquipo"}), @ORM\Index(name="fk_Periféricos_Departamento1_idx", columns={"Departamento_idDepartamento"})})
+ * @ORM\Table(name="perifericos", indexes={@ORM\Index(name="fk_Periféricos_Equipo1_idx", columns={"Equipo_idEquipo"}), @ORM\Index(name="fk_Periféricos_Departamento1_idx", columns={"Departamento_idDepartamento"}), @ORM\Index(name="fk_Periféricos_Tipo_Periferico1_idx", columns={"Tipo_Periferico_id"}), @ORM\Index(name="fk_Periféricos_Tipo_Pantalla1_idx", columns={"Tipo_Pantalla_idTipo_Pantalla"})})
  * @ORM\Entity
  */
 class Perifericos
@@ -15,11 +15,11 @@ class Perifericos
     /**
      * @var integer
      *
-     * @ORM\Column(name="idPerifericos", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idperifericos;
+    private $id;
 
     /**
      * @var boolean
@@ -27,6 +27,48 @@ class Perifericos
      * @ORM\Column(name="isImpresora", type="boolean", nullable=true)
      */
     private $isimpresora;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marca", type="string", length=45, nullable=false)
+     */
+    private $marca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modelo", type="string", length=45, nullable=false)
+     */
+    private $modelo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="serial", type="string", length=45, nullable=false)
+     */
+    private $serial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pulgadas", type="string", length=45, nullable=true)
+     */
+    private $pulgadas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="stiker_activo", type="string", length=45, nullable=true)
+     */
+    private $stikerActivo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fecha_compra", type="string", length=45, nullable=true)
+     */
+    private $fechaCompra;
 
     /**
      * @var \Departamento
@@ -47,6 +89,26 @@ class Perifericos
      * })
      */
     private $equipoequipo;
+
+    /**
+     * @var \TipoPantalla
+     *
+     * @ORM\ManyToOne(targetEntity="TipoPantalla")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Tipo_Pantalla_idTipo_Pantalla", referencedColumnName="idTipo_Pantalla")
+     * })
+     */
+    private $tipoPantallatipoPantalla;
+
+    /**
+     * @var \TipoPeriferico
+     *
+     * @ORM\ManyToOne(targetEntity="TipoPeriferico")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="Tipo_Periferico_id", referencedColumnName="id")
+     * })
+     */
+    private $tipoPeriferico;
 
 
 }

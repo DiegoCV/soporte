@@ -7,6 +7,26 @@
     <id name="idsoftware" type="integer" column="idSoftware">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="tipoSoftwareIdtipoSoftware" type="integer" column="Tipo_Software_idTipo_Software" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fechaVencimiento" type="string" column="fecha_vencimiento" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="version" type="string" column="version" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nombre" type="string" column="nombre" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
     <many-to-one field="equipoequipo" target-entity="Equipo" fetch="LAZY">
       <join-columns>
         <join-column name="Equipo_idEquipo" referenced-column-name="idEquipo"/>
