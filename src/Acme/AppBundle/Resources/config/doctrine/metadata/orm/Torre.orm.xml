@@ -7,6 +7,27 @@
     <id name="idtorre" type="integer" column="idTorre">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="marca" type="string" column="marca" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="modelo" type="string" column="modelo" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="serial" type="string" column="serial" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="stikerActivo" type="string" column="stiker_activo" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fechaCompra" type="date" column="fecha_compra" nullable="true"/>
     <many-to-one field="equipoequipo" target-entity="Equipo" fetch="LAZY">
       <join-columns>
         <join-column name="Equipo_idEquipo" referenced-column-name="idEquipo"/>

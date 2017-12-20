@@ -114,4 +114,9 @@ class Equipo
     {
         return $this->mantenimientomantenimiento;
     }
+
+    public function getAlias(){
+        return "Equipo ".$this->idequipo;
+    }
+    
 }

@@ -4,7 +4,22 @@
     <id name="idusuario" type="integer" column="idUsuario">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="nombre" type="string" column="nombre" length="20" nullable="true">
+    <field name="nombre" type="string" column="nombre" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="apellido" type="string" column="apellido" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="correo" type="string" column="correo" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="clave" type="string" column="clave" length="45" nullable="true">
       <options>
         <option name="fixed"/>
       </options>

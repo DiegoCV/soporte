@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Perifericos
  *
- * @ORM\Table(name="perifericos", indexes={@ORM\Index(name="fk_Periféricos_Equipo1_idx", columns={"Equipo_idEquipo"}), @ORM\Index(name="fk_Periféricos_Departamento1_idx", columns={"Departamento_idDepartamento"}), @ORM\Index(name="fk_Periféricos_Tipo_Periferico1_idx", columns={"Tipo_Periferico_id"}), @ORM\Index(name="fk_Periféricos_Tipo_Pantalla1_idx", columns={"Tipo_Pantalla_idTipo_Pantalla"})})
+ * @ORM\Table(name="perifericos", indexes={@ORM\Index(name="fk_Perifericos_Equipo1_idx", columns={"Equipo_idEquipo"}), @ORM\Index(name="fk_Perifericos_Departamento1_idx", columns={"Departamento_idDepartamento"}), @ORM\Index(name="fk_Perifericos_Tipo_Periferico1_idx", columns={"Tipo_Periferico_id"}), @ORM\Index(name="fk_Perifericos_Tipo_Pantalla1_idx", columns={"Tipo_Pantalla_idTipo_Pantalla"})})
  * @ORM\Entity
  */
 class Perifericos

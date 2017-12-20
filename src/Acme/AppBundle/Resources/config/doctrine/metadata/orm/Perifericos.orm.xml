@@ -2,10 +2,10 @@
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity name="Perifericos" table="perifericos">
     <indexes>
-      <index name="fk_Periféricos_Equipo1_idx" columns="Equipo_idEquipo"/>
-      <index name="fk_Periféricos_Departamento1_idx" columns="Departamento_idDepartamento"/>
-      <index name="fk_Periféricos_Tipo_Periferico1_idx" columns="Tipo_Periferico_id"/>
-      <index name="fk_Periféricos_Tipo_Pantalla1_idx" columns="Tipo_Pantalla_idTipo_Pantalla"/>
+      <index name="fk_Perifericos_Equipo1_idx" columns="Equipo_idEquipo"/>
+      <index name="fk_Perifericos_Departamento1_idx" columns="Departamento_idDepartamento"/>
+      <index name="fk_Perifericos_Tipo_Periferico1_idx" columns="Tipo_Periferico_id"/>
+      <index name="fk_Perifericos_Tipo_Pantalla1_idx" columns="Tipo_Pantalla_idTipo_Pantalla"/>
     </indexes>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>

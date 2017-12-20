@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Solucion
  *
- * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Periféricos1_idx", columns={"Periféricos_idPeriféricos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
+ * @ORM\Table(name="solucion", indexes={@ORM\Index(name="fk_Solucion_Problema1_idx", columns={"Problema_idProblema"}), @ORM\Index(name="fk_Solucion_Perifericos1_idx", columns={"Perifericos_idPerifericos"}), @ORM\Index(name="fk_Solucion_Software1_idx", columns={"Software_idSoftware"}), @ORM\Index(name="fk_Solucion_Torre1_idx", columns={"Torre_idTorre"})})
  * @ORM\Entity
  */
 class Solucion
@@ -136,7 +136,7 @@ class Solucion
     }
 
     /**
-     * Set perif�ricosperif�ricos
+     * Set perifericosperifericos
      *
      * @param \AppBundle\Entity\Perifericos $perifericosperifericos
      *
@@ -150,7 +150,7 @@ class Solucion
     }
 
     /**
-     * Get perif�ricosperif�ricos
+     * Get perifericosperifericos
      *
      * @return \AppBundle\Entity\Perifericos
      */

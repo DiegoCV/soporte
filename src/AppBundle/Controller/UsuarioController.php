@@ -18,10 +18,6 @@ use AppBundle\Entity\Usuario;
 class UsuarioController extends Controller
 {
 
-	/**
-     * @Route("/crear", name="crearUsuario")
-     * Method({'GET'})
-     */
 	public function crearUsuario(Request $request)
 	{
 		//$request->request->get('')

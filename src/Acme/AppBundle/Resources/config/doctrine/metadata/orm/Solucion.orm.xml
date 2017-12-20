@@ -3,16 +3,22 @@
   <entity name="Solucion" table="solucion">
     <indexes>
       <index name="fk_Solucion_Problema1_idx" columns="Problema_idProblema"/>
-      <index name="fk_Solucion_Periféricos1_idx" columns="Perifericos_idPerifericos"/>
+      <index name="fk_Solucion_Perifericos1_idx" columns="Perifericos_idPerifericos"/>
       <index name="fk_Solucion_Software1_idx" columns="Software_idSoftware"/>
       <index name="fk_Solucion_Torre1_idx" columns="Torre_idTorre"/>
     </indexes>
     <id name="idsolucion" type="integer" column="idSolucion">
       <generator strategy="IDENTITY"/>
     </id>
+    <field name="fechaSolucion" type="datetime" column="fecha_Solucion" nullable="true"/>
+    <field name="solucion" type="string" column="Solucion" length="500" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
     <many-to-one field="perifericosperifericos" target-entity="Perifericos" fetch="LAZY">
       <join-columns>
-        <join-column name="Perifericos_idPerifericos" referenced-column-name="idPerifericos"/>
+        <join-column name="Perifericos_idPerifericos" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="problemaproblema" target-entity="Problema" fetch="LAZY">
